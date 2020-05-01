@@ -14,4 +14,5 @@ The educational content includes the following topics:
 8  - Timer Period Application
 9  - Pulse Width Modulation Application [PWM]
 10 - Direct Memory Access [DMA] with ADC 
+11 - Modular Coding
 
