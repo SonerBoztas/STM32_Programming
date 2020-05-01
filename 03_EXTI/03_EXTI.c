@@ -10,7 +10,7 @@ void GPIO_Config()
 	RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOC, ENABLE);
 
 	GPIO_InitStructure.GPIO_Mode	= GPIO_Mode_OUT;
-	GPIO_InitStructure.GPIO_Pin		= GPIO_Pin_5;
+	GPIO_InitStructure.GPIO_Pin	= GPIO_Pin_5;
 	GPIO_InitStructure.GPIO_OType	= GPIO_OType_PP;
 	GPIO_InitStructure.GPIO_PuPd	= GPIO_PuPd_NOPULL;
 	GPIO_InitStructure.GPIO_Speed	= GPIO_Speed_100MHz;
@@ -18,7 +18,7 @@ void GPIO_Config()
 	GPIO_Init(GPIOA, &GPIO_InitStructure);
 
 	GPIO_InitStructure.GPIO_Mode	= GPIO_Mode_IN;
-	GPIO_InitStructure.GPIO_Pin		= GPIO_Pin_3;
+	GPIO_InitStructure.GPIO_Pin	= GPIO_Pin_3;
 	GPIO_InitStructure.GPIO_OType	= GPIO_OType_PP;
 	GPIO_InitStructure.GPIO_PuPd	= GPIO_PuPd_DOWN;
 	GPIO_InitStructure.GPIO_Speed	= GPIO_Speed_100MHz;
@@ -39,10 +39,10 @@ void EXTI_Config()
 
 	EXTI_Init(&EXTI_InitStructure);
 
-	NVIC_InitStructure.NVIC_IRQChannel		= EXTI3_IRQn;
+	NVIC_InitStructure.NVIC_IRQChannel	= EXTI3_IRQn;
 	NVIC_InitStructure.NVIC_IRQChannelCmd	= ENABLE;
 	NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority	= 0;
-	NVIC_InitStructure.NVIC_IRQChannelSubPriority			= 0;
+	NVIC_InitStructure.NVIC_IRQChannelSubPriority		= 0;
 
 	NVIC_Init(&NVIC_InitStructure);
 }
@@ -67,7 +67,7 @@ void EXTI3_IRQHandler()
 		GPIO_ResetBits(GPIOA, GPIO_Pin_5);
 		delay(840000);
 
-		EXTI_ClearITPendingBit(EXTI_Line3);  // ***************************************************************
+		EXTI_ClearITPendingBit(EXTI_Line3);  
 	}
 }
 int main()
