@@ -1,8 +1,8 @@
 #include "stm32f4xx.h"
 
-GPIO_InitTypeDef			GPIO_InitStructure;
+GPIO_InitTypeDef		GPIO_InitStructure;
 TIM_TimeBaseInitTypeDef		TIM_TimeBaseInitStructure;
-NVIC_InitTypeDef			NVIC_InitStructure;
+NVIC_InitTypeDef		NVIC_InitStructure;
 
 #define led GPIO_Pin_5
 
@@ -11,7 +11,7 @@ void GPIO_Config()
 	RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOA, ENABLE);
 
 	GPIO_InitStructure.GPIO_Mode	= GPIO_Mode_OUT;
-	GPIO_InitStructure.GPIO_Pin		= GPIO_Pin_5;
+	GPIO_InitStructure.GPIO_Pin	= GPIO_Pin_5;
 	GPIO_InitStructure.GPIO_OType	= GPIO_OType_PP;
 	GPIO_InitStructure.GPIO_PuPd	= GPIO_PuPd_NOPULL;
 	GPIO_InitStructure.GPIO_Speed	= GPIO_Speed_100MHz;
@@ -25,11 +25,11 @@ void GPIO_Config()
  *   T = --------------------------------        --->  F = -----   *
  *                   (Clock Freq)                            T     *
  *******************************************************************
- *																   *
- *	       (Period + 1) x (Prescaler + 1) x (RC + 1)     		   *
+ *								   *
+ *	       (Period + 1) x (Prescaler + 1) x (RC + 1)     	   *
  *   T = ---------------------------------------------             *
  *                    (Clock Freq )                                *
- * 	                                                               *
+ * 	                                                           *
  *                 FOR ADVANCED TIMERS ONLY                        *
  *******************************************************************
  *
@@ -44,6 +44,7 @@ void GPIO_Config()
  * PLL_Q = 4
  *
  */
+
 void TIM2_Config()
 {
 	RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM2, ENABLE);
@@ -61,9 +62,9 @@ void TIM2_Config()
 
 	TIM_ITConfig(TIM2, TIM_IT_Update, ENABLE);
 
-	NVIC_InitStructure.NVIC_IRQChannel		= TIM2_IRQn;
+	NVIC_InitStructure.NVIC_IRQChannel	= TIM2_IRQn;
 	NVIC_InitStructure.NVIC_IRQChannelCmd	= ENABLE;
-	NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 0;
+	NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority 	 = 0;
 	NVIC_InitStructure.NVIC_IRQChannelSubPriority	   	 = 0;
 
 	NVIC_Init(&NVIC_InitStructure);
