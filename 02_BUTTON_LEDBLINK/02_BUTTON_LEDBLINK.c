@@ -1,7 +1,7 @@
 #include "stm32f4xx.h"
 
-// GPIO A PORTU 5.  P�N = DAH�L� LED
-// GPIO C PORTU 13. P�N	= DAH�L� BUTON
+// GPIO A PORTU 5.  PIN = DAHILI LED
+// GPIO C PORTU 13. PIN	= DAHILI BUTON
 
 uint8_t button_input = 0;
 uint16_t counter = 0;
