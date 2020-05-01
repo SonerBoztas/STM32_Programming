@@ -7,7 +7,7 @@ NVIC_InitTypeDef	NVIC_InitStructure;
 #define button_1	GPIO_Pin_2
 #define button_2	GPIO_Pin_3
 
-#define led			GPIO_Pin_5
+#define led		GPIO_Pin_5
 #define led_1		GPIO_Pin_8
 #define led_2		GPIO_Pin_9
 
@@ -23,7 +23,7 @@ void GPIO_Config()
 	//RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOC | RCC_AHB1Periph_GPIOA | RCC_AHB1Periph_GPIOB , ENABLE);
 
 	GPIO_InitStructure.GPIO_Mode	= GPIO_Mode_OUT;
-	GPIO_InitStructure.GPIO_Pin		= GPIO_Pin_5;
+	GPIO_InitStructure.GPIO_Pin	= GPIO_Pin_5;
 	GPIO_InitStructure.GPIO_OType	= GPIO_OType_PP;
 	GPIO_InitStructure.GPIO_PuPd	= GPIO_PuPd_NOPULL;
 	GPIO_InitStructure.GPIO_Speed	= GPIO_Speed_25MHz;
@@ -31,7 +31,7 @@ void GPIO_Config()
 	GPIO_Init(GPIOA, &GPIO_InitStructure);
 
 	GPIO_InitStructure.GPIO_Mode	= GPIO_Mode_OUT;
-	GPIO_InitStructure.GPIO_Pin		= GPIO_Pin_8 | GPIO_Pin_9;
+	GPIO_InitStructure.GPIO_Pin	= GPIO_Pin_8 | GPIO_Pin_9;
 	GPIO_InitStructure.GPIO_OType	= GPIO_OType_PP;
 	GPIO_InitStructure.GPIO_PuPd	= GPIO_PuPd_NOPULL;
 	GPIO_InitStructure.GPIO_Speed	= GPIO_Speed_25MHz;
@@ -39,7 +39,7 @@ void GPIO_Config()
 	GPIO_Init(GPIOB, &GPIO_InitStructure);
 
 	GPIO_InitStructure.GPIO_Mode	= GPIO_Mode_IN;
-	GPIO_InitStructure.GPIO_Pin		= GPIO_Pin_2 | GPIO_Pin_3;
+	GPIO_InitStructure.GPIO_Pin	= GPIO_Pin_2 | GPIO_Pin_3;
 	GPIO_InitStructure.GPIO_OType	= GPIO_OType_PP;
 	GPIO_InitStructure.GPIO_PuPd	= GPIO_PuPd_DOWN;
 	GPIO_InitStructure.GPIO_Speed	= GPIO_Speed_25MHz;
@@ -63,17 +63,17 @@ void EXTI_Config()
 
 	NVIC_PriorityGroupConfig(NVIC_PriorityGroup_1);
 
-	NVIC_InitStructure.NVIC_IRQChannel		= EXTI2_IRQn;
+	NVIC_InitStructure.NVIC_IRQChannel	= EXTI2_IRQn;
 	NVIC_InitStructure.NVIC_IRQChannelCmd	= ENABLE;
 	NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority	= 0;
-    NVIC_InitStructure.NVIC_IRQChannelSubPriority			= 0;
+    NVIC_InitStructure.NVIC_IRQChannelSubPriority		= 0;
 
     NVIC_Init(&NVIC_InitStructure);
 
-    NVIC_InitStructure.NVIC_IRQChannel      = EXTI3_IRQn;
+    NVIC_InitStructure.NVIC_IRQChannel      	= EXTI3_IRQn;
     NVIC_InitStructure.NVIC_IRQChannelCmd	= ENABLE;
     NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority	= 1;
-    NVIC_InitStructure.NVIC_IRQChannelSubPriority			= 0;
+    NVIC_InitStructure.NVIC_IRQChannelSubPriority		= 0;
 
     NVIC_Init(&NVIC_InitStructure);
 
