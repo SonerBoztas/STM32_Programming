@@ -5,16 +5,16 @@
 #define led_3 GPIO_Pin_8
 #define led_4 GPIO_Pin_9
 
-GPIO_InitTypeDef			GPIO_InitStructure;
+GPIO_InitTypeDef		GPIO_InitStructure;
 TIM_TimeBaseInitTypeDef		TIM_TimeBaseInitStructure;
-NVIC_InitTypeDef			NVIC_InitStructure;
+NVIC_InitTypeDef		NVIC_InitStructure;
 
 void GPIO_Config()
 {
 	RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOC, ENABLE);
 
 	GPIO_InitStructure.GPIO_Mode	=	GPIO_Mode_OUT;
-	GPIO_InitStructure.GPIO_Pin		= 	GPIO_Pin_5 | GPIO_Pin_6 | GPIO_Pin_8 | GPIO_Pin_9;
+	GPIO_InitStructure.GPIO_Pin	= 	GPIO_Pin_5 | GPIO_Pin_6 | GPIO_Pin_8 | GPIO_Pin_9;
 	GPIO_InitStructure.GPIO_OType	= 	GPIO_OType_PP;
 	GPIO_InitStructure.GPIO_PuPd	= 	GPIO_PuPd_NOPULL;
 	GPIO_InitStructure.GPIO_Speed	= 	GPIO_Speed_100MHz;
@@ -55,10 +55,10 @@ void TIM2_Config()
 
 	TIM_Cmd(TIM2, ENABLE);
 
-	NVIC_InitStructure.NVIC_IRQChannel						= TIM2_IRQn;
+	NVIC_InitStructure.NVIC_IRQChannel			= TIM2_IRQn;
 	NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority	= 0;
-	NVIC_InitStructure.NVIC_IRQChannelSubPriority			= 0;
-	NVIC_InitStructure.NVIC_IRQChannelCmd					= ENABLE;
+	NVIC_InitStructure.NVIC_IRQChannelSubPriority		= 0;
+	NVIC_InitStructure.NVIC_IRQChannelCmd			= ENABLE;
 
 	NVIC_Init(&NVIC_InitStructure);
 
