@@ -11,7 +11,7 @@ The educational content includes the following topics:
 5  - Analog to Digital Converter [ADC] Application 
 6  - ADC Application with LED 
 7  - Timer 
-8 - Timer Period Application
-9 - Pulse Width Modulation Application [PWM]
+8  - Timer Period Application
+9  - Pulse Width Modulation Application [PWM]
 10 - Direct Memory Access [DMA] with ADC 
 
